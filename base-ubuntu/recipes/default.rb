@@ -15,3 +15,8 @@ directory '/tmp/dir_wo_action'
 file '/tmp/index.html' do
   content '<html>This is a placeholder for the home page.</html>'
 end
+
+
+#include_recipe 'common.rb'
+
+

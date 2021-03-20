@@ -1,0 +1,6 @@
+127.0.0.1 localhost
+
+
+192.168.2.11 chef-server
+192.168.2.12 ubuntu-client1
+192.168.2.13 centos-client1
