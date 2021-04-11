@@ -1,9 +1,24 @@
+if node['platform_version'] == '18.04'
+
 file '/tmp/networkinfo' do
   content "
   Info collected by Selva:
   Platform: #{node["platform"]}
   enp0s3: #{node["network"]["interfaces"]["enp0s3"]}
   "
+end
+
+else
+
+file '/tmp/otherinfo' do
+  content "
+  Info collected by Selva:
+  Platform: #{node["platform"]}
+  enp0s3: #{node["network"]["interfaces"]["enp0s3"]}
+  "
+end
+
+
 end
 
 
@@ -20,3 +35,14 @@ file "/tmp/#{devops['username']}" do
   "
   action :create
 end
+
+['git','ansible','net-tools'].each do |pkg_name|
+
+        package pkg_name do
+
+                action :install
+        end
+
+end
+
+
