@@ -30,18 +30,5 @@ package 'nagios-nrpe-server'
 package 'nagios-plugins'
 
 
-file '/tmp/networkinfo' do
-  content "
-  Info collected by Selva:
-  Platform: #{node["platform"]}
-  enp0s3: #{node["network"]["interfaces"]["enp0s3"]}
-  "
-end
-
-
-file "#{node["logfile"]}" do
-  content "test"
- action :create
-end
 
 
